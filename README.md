@@ -4,5 +4,5 @@
 # Insert
 ![binarytree](https://user-images.githubusercontent.com/51693679/99879937-3856c980-2c36-11eb-8a14-51abbea8cbc4.png)
 # Inorder Traverse
-![inorder](https://user-images.githubusercontent.com/51693679/99879905-db5b1380-2c35-11eb-9683-be8db0ccca40.png)
+![inorder](https://user-images.githubusercontent.com/51693679/99879996-ab604000-2c36-11eb-80a1-b65766d5f994.png)
 
