@@ -85,13 +85,63 @@ class BinaryTree{
             } 
         } 
 
+    
+    
+        void preorder(node *root)
+    {
+        if (root == NULL)
+            return;
+
+        stack<node *> s;
+        s.push(root);
+
+        while (!s.empty())
+        {
+            node *curr = s.top();
+            cout << " " << curr->data << endl;
+            s.pop();
+
+            if (curr->right)
+                s.push(curr->right);
+
+            if (curr->left)
+                s.push(curr->left);
+        }
+    }
+
+    void postorder(node * temp){
+        if(temp == NULL)
+            return;
+        cout<<"  " <<temp->data <<endl;
+        preorder(temp->left);
+        preorder(temp->right);
+    }
+
+    void postorder(node *root)
+    {
+        if (root == NULL)
+            return;
+
+        node *temp = root;
+        unordered_set<node *> visited;
+        while (temp && visited.find(temp) == visited.end())
+        {
+            if (temp->left && visited.find(temp->left) == visited.end())
+                temp = temp->left;
+            else if (temp->right && visited.find(temp->right) == visited.end())
+                temp = temp->right;
+            else
+            {
+                cout << " " << temp->data;
+                visited.insert(temp);
+                temp = root;
+            }
+        }
+    }
 
 
-
-
-
-
-
+//     YOU CAN USE THESE METHOD ALSO MAY BE IT'S EASSY FOR YOU
+    
         // void inorder(node* temp){
         //     if(temp == NULL)
         //         return;
@@ -102,23 +152,23 @@ class BinaryTree{
         // }
 
 
-        void preorder(node * temp){
-            if(temp == NULL)
-                return;
-            cout<<"  " <<temp->data <<endl;
-            preorder(temp->left);
-            preorder(temp->right);
-        }   
+//         void preorder(node * temp){
+//             if(temp == NULL)
+//                 return;
+//             cout<<"  " <<temp->data <<endl;
+//             preorder(temp->left);
+//             preorder(temp->right);
+//         }   
 
     
-        void postorder(node * temp){
-            if(temp == NULL)
-                return;
-            postorder(temp->left);
-            postorder(temp->right);
-            cout<<"  " <<temp->data <<endl;
+//         void postorder(node * temp){
+//             if(temp == NULL)
+//                 return;
+//             postorder(temp->left);
+//             postorder(temp->right);
+//             cout<<"  " <<temp->data <<endl;
 
-        }   
+//         }   
 
 
 
